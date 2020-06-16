@@ -11,7 +11,7 @@
 
 ## 🙇‍♂️ O que é:
 
-O LaunchBase é um bootcamp oferecido pela Rocketseat, com aulas ministradas por Mayk Brito, que tem como objetivo preparar iniciantes no mundo do desenvolvimento web para o mercado de trabalho. Explicando de forma e objetiva as stacks mais usadas atualmente.
+O LaunchBase é um bootcamp oferecido pela Rocketseat, com aulas ministradas por Mayk Brito, que tem como objetivo preparar iniciantes no mundo do desenvolvimento web para o mercado de trabalho. Explicando de forma clara e objetiva as stacks mais usadas atualmente.
 
 ## 🔧 Tecnologias abordadas:
 
