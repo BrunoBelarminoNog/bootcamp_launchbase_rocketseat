@@ -11,7 +11,7 @@
 ## 📎 Módulo 1
 
 <p> Neste módulo foi abordado uma introdução à programação web com conceitos básicos de javascript, entre eles:<br><br>
-- Váriaveis e escopos;<br>
+- Variáveis e escopos;<br>
 - Condicionais;<br>
 - Operadores relacionais e comparativos;<br>
 - Operadores lógicos e aritméticos;<br>
