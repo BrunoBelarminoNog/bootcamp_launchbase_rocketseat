@@ -178,6 +178,59 @@ div.box__color li {
     border-radius: 50px;
 }
 
+/*************** MODAL **********/
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.836);
+    width: 100%;
+    height: 100%;
+    transition: step-start 200ms;
+
+    position: fixed;
+    top: 0;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    width: 75%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+    
+}
+.modal .maximize-modal,
+.modal .close-modal {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4px;
+    right: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.modal .maximize-modal {
+    right: 68px;
+}
+
+iframe {
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    background-color: #fff;
+    border: 1px solid #282a36;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 /*********** FOOTER ***********/
 
 footer {
