@@ -26,7 +26,7 @@
 - [**Desafio 2-3: Página de cursos e iframe**](https://github.com/Rocketseat/bootcamp-launchbase-desafios-02/blob/master/desafios/02-3-pagina-cursos-e-iframe.md)
 
 
-Os três desafios são continuidade um do outro na construção de uma página de apresentação da Rocketseat. Tinhamos liberdade de escolher a estilização que prefeririamos, porém seguindo alguns pontos obrigatórios.
+Os três desafios são continuidade um do outro na construção de uma página de apresentação da Rocketseat. Tínhamos liberdade de escolher a estilização que preferiríamos, porém seguindo alguns pontos obrigatórios.
 
 ## 💻 Resultado:
 
