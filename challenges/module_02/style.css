@@ -104,11 +104,6 @@ section.apresentacao {
     align-items: center;
 }
 
-.img__content img {
-    width: 200px;
-    border-radius: 50%;
-    border: 8px solid rgb(85, 26, 139);
-}
 
 section.apresentacao .info_empresa {
     width: 50%;
@@ -182,6 +177,8 @@ div.container.technologies h1 {
     font-weight: 300;
     text-align: right;
 }
+
+/********** CARDS **********/
 
 .wrapper {
     text-align: center;
