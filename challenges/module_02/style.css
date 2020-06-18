@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -125,9 +126,62 @@ div.box__color li {
     padding: 12px;
 }
 
+.wrapper {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.cards__container{
+    max-width: 1024px;
+    margin: 42px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    width: 100%;
+    background-color: #000000;
+    padding: 50px 30px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+#starter:hover {
+    border: 3px solid #7159c1;
+}
+
+#launchbase:hover {
+    border: 3px solid #fd951f;
+}
+
+#gostack:hover {
+    border: 3px solid #04d361;
+
+}
+.card__content {
+    margin: 28px 0;
+    text-align: center;
+}
+.card__info{
+    margin-top: 24px;
+}
+
+.card__info .price {
+    background-color: #282a36;
+    padding: 8px 30px;
+    border-radius: 50px;
+}
+
+/*********** FOOTER ***********/
+
 footer {
     width: 100%;
-   
 }
 
 .footer__content {
