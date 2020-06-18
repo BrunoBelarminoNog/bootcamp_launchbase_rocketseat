@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #282a36;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: fixed;
+}
+
+header #header__content {
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #header__content .links {
+    display: flex;
+    align-items: center;
+}
+
+ul.pages {
+    list-style: none;
+}
+ul.pages li {
+    float: left;
+    margin: 0 16px;
+}
+
+ul.pages li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 300ms;
+    font-size: 16px;
+
+}
+
+ul.pages li a:hover {
+    color: rgb(85, 26, 139);
+
+}
+
+header #header__content span.separator {
+    background-color: rgba(255, 255, 255, 0.418);
+    width: 2px;
+    height: 36px;
+    margin: 0 16px;
+}
+ul {
+    list-style: none;
+}
+header #header__content ul li {
+    float: left;
+    margin: 0 16px;
+}
+
+header #header__content ul li a i {
+    font-size: 24px;
+    color: #fff;
+    transition: color 300ms;
+}
+header #header__content ul li a i:hover {
+    color: rgb(85, 26, 139);
+}
+div#id {
+    height: 95px;
+    width: 100%;
+}
+.container {
+    max-width: 900px;
+    height: 60vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.box__color {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+
+section.apresentacao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img__content img {
+    width: 200px;
+    border-radius: 50%;
+    border: 8px solid rgb(85, 26, 139);
+}
+
+section.apresentacao .info_empresa {
+    width: 50%;
+    text-align: center;
+}
+
+h1{
+    font-size: 32px;
+    color: blueviolet;
+    padding: 20px;
+}
+section.apresentacao .info_empresa p {
+    color: #fff;
+    padding: 20px;
+}
+
+div.box__color li {
+    color: #fff;
+    padding: 12px;
+}
+
+footer {
+    width: 100%;
+   
+}
+
+.footer__content {
+    max-width: 1024px;
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
