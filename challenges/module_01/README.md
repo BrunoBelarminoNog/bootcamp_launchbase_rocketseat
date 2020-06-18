@@ -42,6 +42,10 @@
 
     -[Operações bancárias](js/bank_transactions.js)
 
+## 📋 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
+
 <hr>
 
 #### 🙋‍♂️ Feito por Bruno Belarmino - [Entre em contato!](https://www.linkedin.com/in/bruno-belarmino-nog/)
