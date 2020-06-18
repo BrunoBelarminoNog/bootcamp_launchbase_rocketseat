@@ -17,7 +17,9 @@ header {
     background-color: rgba(0, 0, 0, 0.63);
     position: fixed;
 }
-
+header#header_index {
+    z-index: 1;
+}
 header #header__content {
     max-width: 1024px;
     height: 100%;
@@ -84,19 +86,21 @@ div#id {
     height: 60vh;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    background-image: url(./assets/stars.svg);
 
 }
 
 .box__color {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.404);
+    background-image: url(./assets/stars.svg);
 }
 
 section.apresentacao {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -108,22 +112,75 @@ section.apresentacao {
 
 section.apresentacao .info_empresa {
     width: 50%;
-    text-align: center;
+    text-align: left;
 }
 
 h1{
-    font-size: 32px;
+    font-size: 42px;
     color: blueviolet;
     padding: 20px;
 }
 section.apresentacao .info_empresa p {
     color: #fff;
+    font-size: 32px;
+    font-weight: 200;
     padding: 20px;
 }
+
 
 div.box__color li {
     color: #fff;
     padding: 12px;
+}
+
+div.box__color {
+    position: relative;
+}
+
+div.box__color img.img_back {
+    width: 700px;
+    position: absolute;
+    top: -120%;
+    left: 42%;
+}
+div.container.technologies {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+div.container.technologies ul div.item1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+div.container.technologies ul div.item2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+div.container.technologies li {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.container.technologies li img {
+    width: 100px;
+    height: 100px;
+    transition: ease-out 300ms;
+    margin-bottom: 8px;
+}
+
+div.container.technologies li img:hover {
+    box-shadow: 0px 0px 50px 8px rgba(255, 255, 255, 0.466);
+}
+
+div.container.technologies h1 {
+    padding: 40px;
+    font-size: 50px;
+    font-weight: 300;
+    text-align: right;
 }
 
 .wrapper {
@@ -142,6 +199,7 @@ div.box__color li {
 .card {
     width: 100%;
     background-color: #000000;
+    background-image: url(./assets/stars.svg);
     padding: 50px 30px;
     border-radius: 14px;
     display: flex;
@@ -152,6 +210,38 @@ div.box__color li {
     cursor: pointer;
 }
 
+.card_number {
+    margin-bottom: 60px;
+    padding: 12px 20px;
+}
+#starter .card_number {
+    color: #7159c1;
+    border: 3px solid #7159c1;
+    border-radius: 100%;
+}
+#launchbase .card_number {
+    color: #fd951f;
+    border: 3px solid #fd951f;
+    border-radius: 100%;
+}
+#gostack .card_number {
+    color: #04d361;
+    border: 3px solid #04d361;
+    border-radius: 100%;
+}
+
+#starter .card__content span {
+    color: #7159c1;
+    font-weight: 600;
+}
+#launchbase .card__content span {
+    color: #fd951f;
+    font-weight: 600;
+}
+#gostack .card__content span {
+    color: #04d361;
+    font-weight: 600;
+}
 #starter:hover {
     border: 3px solid #7159c1;
 }
@@ -235,6 +325,7 @@ iframe {
 
 footer {
     width: 100%;
+    background-color: #0000008a;
 }
 
 .footer__content {
@@ -244,4 +335,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footer__content ul.pages li a {
+    padding-bottom: 4px;
+    border-bottom: 2px solid #7159c1;
 }
