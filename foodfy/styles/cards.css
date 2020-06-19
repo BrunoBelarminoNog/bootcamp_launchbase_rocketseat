@@ -1,0 +1,53 @@
+/********** CARDS ******/
+section#receitas {
+    margin: 50px auto
+}
+
+section#receitas .receitas_cabecalho h2 {
+    color: #111111;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+section#receitas .receitas_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+section#receitas .receitas_cards .card {
+    max-width: 300px;
+    cursor: pointer;
+}
+
+section#receitas .receitas_cards .card a {
+    text-decoration: none;
+}
+
+section#receitas .receitas_cards .card a:hover {
+    text-decoration: underline #FBDFDB;
+}
+
+section#receitas .receitas_cards .card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+section#receitas .receitas_cards .card .card_content {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+section#receitas .receitas_cards .card .card_content h3 {
+    font-size: 18px;
+    color: #111111;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+section#receitas .receitas_cards .card .card_content p {
+    font-size: 14px;
+    color: #777777;
+    line-height: 24px;
+}
