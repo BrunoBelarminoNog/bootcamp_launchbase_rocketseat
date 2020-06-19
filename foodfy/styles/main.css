@@ -23,7 +23,7 @@ header .container_header {
 header .container_header #logo_header {
     width: 91px;
     height: 27px;
-    background: url(/foodfy/assets/logo.png) no-repeat center right;
+    background: url(../assets/logo.png) no-repeat center right;
 }
 
 header .container_header #logo_header h1 {
