@@ -3,6 +3,10 @@ section#receitas {
     margin: 50px auto
 }
 
+section#receitas.page_receitas {
+    margin: 10px auto 50px auto;
+}
+
 section#receitas .receitas_cabecalho h2 {
     color: #111111;
     font-size: 24px;
