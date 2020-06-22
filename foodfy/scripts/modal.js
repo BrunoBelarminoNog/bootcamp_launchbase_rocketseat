@@ -20,3 +20,10 @@ for (let card of cards){
 modalClose.addEventListener('click', () => {
     modalOverlay.classList.remove('active');
 })
+
+function fechar() {
+    modalOverlay.classList.remove('active');
+}
+function abrir() {
+    modalOverlay.classList.add('active');
+}

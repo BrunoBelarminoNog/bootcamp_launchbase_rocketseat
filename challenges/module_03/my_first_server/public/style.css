@@ -179,12 +179,17 @@ div.container.technologies h1 {
     text-align: right;
 }
 
-/********** CARDS **********/
-
-.wrapper {
-    text-align: center;
-    margin-top: 24px;
+div.container#error {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
+div.container#error h2 {
+    padding: 20px;
+}
+/********** CARDS **********/
 
 .cards__container{
     max-width: 1024px;

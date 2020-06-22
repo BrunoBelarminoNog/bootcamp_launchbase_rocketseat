@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    {% endblock head %}
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <header id="{{headerId}}">
+        <div id="header__content">
+            <span>
+                <img src="./assets/logo_rocket.svg" alt="">
+            </span>
+
+            <div class="links">
+                <ul class="pages">
+                    <li>
+                        <a href="/">CURSOS</a>
+                    </li>
+                    <li>
+                        <a href="/sobre">SOBRE</a>
+                    </li>
+                </ul>
+
+                <span class="separator">
+
+                </span>
+
+                <ul>
+                    <li>
+                        <a href="https://discordapp.com/invite/gCRAFhc" target="_blanck">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:oi@rocketseat.com.br">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+5547992078767">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="id">
+
+    </div>
+
+{% block content %}
+{% endblock content %}
+   
+
+    <footer>
+
+        <div class="footer__content">
+            <ul class="pages">
+                <li><a href="">Github</a></li>
+                <li><a href="">Instagram</a></li>
+                <li><a href="">Facebook</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

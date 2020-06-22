@@ -1,0 +1,59 @@
+{% extends "layout.njk" %}
+
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+   
+
+{% block content %}
+    <div id="wrapper">
+        
+        <h1>Aulas</h1>
+
+    </div>
+
+    <section class="cards">
+
+        {% for item in items %}
+
+        <div class="card" id="{{item.id}}">
+            <div class="cards__img-container {{"featured-wrapper" if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/0.jpg" alt="Imagem de {{item.title}}">
+                {% if item.featured %}
+                    <div class="featured">Featured</div>
+                {% endif %}
+            </div>
+            <div class="cards__content-container">
+                <p>{{item.title}}</p>
+            </div>
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="price">{{item.price}}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+        
+
+    </section>
+
+    <!-- ----------MODAL-------------
+    
+    <div class="modal-overlay ">
+        <div class="modal">
+            <a class="close-modal">
+                <span class="material-icons">
+                    close
+                </span>
+            </a>
+
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    -->
+
+<script src="./scripts.js"></script>
+
+{% endblock %}

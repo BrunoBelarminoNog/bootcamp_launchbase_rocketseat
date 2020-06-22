@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+{% set headerId = "header_index" %}
+
+{% block head %}
+    <title>Sobre</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="container">
+
+        <section class="apresentacao">
+            <div class="info_empresa">
+                <h1>Rocketseat</h1>
+                <p>Cursos 100% online e gratuitos para você entrar com o pé direito nas tecnologias mais desejadas do
+                    mercado.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="box__color">
+        <img src="./assets/rocketseat_white.png" alt="" class="img_back">
+
+        <div class="container technologies">
+
+            
+            <ul>
+                <div class="item1">
+                <li><img src="./assets/curso-javascript.svg" alt=""> Javascript</li>
+                <li><img src="./assets/curso-javascript-es6.svg" alt="">ES6+</li>
+                </div>
+                <div class="item2">
+                <li><img src="./assets/curso-nodejs.svg" alt="">NodeJS</li>
+                <li><img src="./assets/curso-reactjs.svg" alt="">ReactJS</li>
+                <li><img src="./assets/curso-react-native.svg" alt="">React Native</li>
+                </div>
+            </ul>
+
+            <h1>Principais tecnologias</h1>
+        </div>
+
+
+    </div>
+{% endblock content %}

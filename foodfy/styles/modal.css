@@ -13,6 +13,8 @@ div.modalOverlay {
     visibility: hidden;
 
     transition: ease-out 200ms;
+
+    z-index: 0;
 }
 
 div.modalOverlay.active {
@@ -23,8 +25,10 @@ div.modalOverlay.active {
 div.modalOverlay .modal {
     background-color: #fff;
     border-radius: 16px;
-    width: 660px;
+    max-width: 660px;
     padding: 30px;
+
+    z-index: 2;
 
     display: flex;
     flex-direction: column;
