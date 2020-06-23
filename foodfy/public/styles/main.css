@@ -10,6 +10,7 @@
 /*********** HEADER ***********/
 
 header {
+    width: 90%;
     max-width: 940px;
     margin: 0 auto;
 }
@@ -50,6 +51,7 @@ header .container_header #menu_header ul li a {
 /********** MAIN ************/
 
 main.container {
+    width: 90%;
     max-width: 940px;
     margin: 0 auto;
 }
