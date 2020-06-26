@@ -10,6 +10,8 @@ body {
     background-color: rgb(131, 131, 131);
     font-family: 'Roboto', sans-serif;
 }
+
+/*************** HEADER **************/
 header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.637);
@@ -46,4 +48,79 @@ header .header_container a:hover::after {
 header .header_container a:hover {
     color: rgb(131, 131, 131);
     transition: color 300ms ease-in-out;
+}
+
+/**************** CARD ******************/
+
+.card {
+    width: 800px;
+    min-height: 400px;
+
+    margin: 50px auto;
+
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.61);
+    
+    animation: up;
+    animation-duration: 1s;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.card .card_img {
+    width: 100%;
+    height: 100%;
+    background: url(https://source.unsplash.com/collection/517198/800x800) no-repeat center center / cover;
+}
+
+.card .card_content {
+    padding: 20px;
+}
+
+.card .card_content h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: #666;
+}
+.card .card_content .item {
+    padding: 8px;
+    border-top: 2px solid rgba(0, 0, 0, 0.199);
+}
+.card .card_content .item:nth-child(2) {
+    border: none;
+}
+
+.item div:nth-child(1){
+    font-size: 14px;
+    color: #777;
+}
+
+.item div:nth-child(2) {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px;
+}
+
+.item span {
+    padding: 4px 8px;
+    background-color: rgba(0, 158, 0, 0.685);
+    border-radius: 16px;
+    display: inline-block;
+    margin-top: 4px;
+    padding: 8px;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgb(245, 245, 245);
+    letter-spacing: 1px;
 }
