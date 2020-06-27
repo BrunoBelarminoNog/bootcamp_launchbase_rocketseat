@@ -14,6 +14,8 @@ routes.get('/instructors/create', function (req, res) {
     return res.render('instructors/create')
 })
 
+routes.get('/instructors/:id', instructors.show)
+
 //.post responsavel pela rota de pegar asiformações submetidas pelo formulario com method="POST"
 routes.post('/instructors', instructors.post)
 
