@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require("./data.json")
-const { age } = require('./utils')
+const { age, date } = require('./utils')
 
 
 //show
@@ -18,7 +18,7 @@ exports.show = function (req, res) {
         ...foundInstructor,
         age: age(foundInstructor.birth),
         services: foundInstructor.services.split(","),
-        created_at: "",
+        created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at),
     }
     return res.render('instructors/show', {instructor})
 }
@@ -63,8 +63,72 @@ exports.post = function (req, res) {
        //  return res.send(req.body)
      }
 
+//edit
+exports.edit = function (req, res) {
+     const {id} = req.params
 
-//update
+     const foundInstructor = data.instructors.find(function (instructor) {
+         return instructor.id == id
+     })
 
+     if (!foundInstructor) return res.send('Instructor not found.')
+
+
+     const instructor = {
+         ...foundInstructor,
+     birth: date(foundInstructor.birth)
+     }
+
+    
+    return res.render('instructors/edit', { instructor })
+}
+
+
+//put 
+exports.put = function (req, res) {
+    const {id} = req.body
+    let index = 0
+
+    const foundInstructor = data.instructors.find(function (instructor, foundIndex) {
+        if (id == instructor.id){
+            index = foundIndex
+            return true
+        }
+    })
+
+    if (!foundInstructor) return res.send('Instructor not found.')
+
+    const instructor = {
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.instructors[index] = instructor
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if(err) {
+            return res.send("write error")
+        }
+
+        return res.redirect(`/instructors/${id}`)
+    })
+}
 
 //delete
+exports.delete = function (req, res) {
+    const {id} = req.body
+
+    const filteredInstructors = data.instructors.filter(function(instructor) {
+        return instructor.id != id
+        //percorremos o array do data.instructors, se o instructor.id for DIFERENTE do id do req.body, retornará true e sera incluido no array filteredInstructors, caso seja o MESMO ID, retornará false e será FILTRADO/EXCLUIDO da incluisao desse array
+    })
+
+    data.instructors = filteredInstructors //com o array filtrado, atualizamos o data.instructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send("Write file error!")
+    })
+
+    return res.redirect("/instructors")
+}

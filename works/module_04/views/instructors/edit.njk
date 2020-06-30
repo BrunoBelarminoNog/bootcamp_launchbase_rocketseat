@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+
+<div class="card">
+
+    <section class="avatar">
+    </section>
+
+    <section class="details">
+<!-- O formulario html so aceita como method o GET e o POST, para tranalhar com os verbos PUT e DELETE usar o method OVERRIDE:
+-No terminal digitar: npm install method-override
+-Chamar o methodOverride no arquivo server.js e configurar
+-No action escrever ?_method=PUT ou ?_method=DELETE no ao final do endereço, exemplo=> action="/..........?_method=PUT"
+-Estamos passando entao uma query string com o methodo a ser utilizado
+ -->
+        <form  method="POST" action="/instructors?_method=PUT">
+
+                <h3>Editar instrutor</h3>
+
+                {% include 'instructors/fields.njk' %}
+
+                <input type="hidden" name="id" value={{instructor.id}}>
+
+        </form>
+
+        <form id="form-delete" action="/instructors?_method=DELETE" method="post">
+            <input type="hidden" name="id" value={{instructor.id}}>
+            <button type="submit">Deletar</button>
+        </form>
+
+    </section>
+</div>
+
+
+
+{% endblock content %}
