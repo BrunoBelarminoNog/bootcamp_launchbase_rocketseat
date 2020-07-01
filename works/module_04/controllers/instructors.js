@@ -1,7 +1,12 @@
 const fs = require('fs')
-const data = require("./data.json")
-const { age, date } = require('./utils')
+const data = require("../data.json")
+const { age, date } = require('../utils')
 
+
+//index
+exports.index = function (req, res) {
+    return res.render('instructors/index', {instructors: data.instructors})
+}
 
 //show
 exports.show = function (req, res) {
@@ -21,6 +26,11 @@ exports.show = function (req, res) {
         created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at),
     }
     return res.render('instructors/show', {instructor})
+}
+
+//create
+exports.create = function (req, res) {
+    return res.render('instructors/create')
 }
 
 //post
@@ -76,7 +86,7 @@ exports.edit = function (req, res) {
 
      const instructor = {
          ...foundInstructor,
-     birth: date(foundInstructor.birth)
+     birth: date(foundInstructor.birth).iso
      }
 
     
@@ -101,7 +111,8 @@ exports.put = function (req, res) {
     const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id) //construtor number que transforma string em numero
     }
 
     data.instructors[index] = instructor

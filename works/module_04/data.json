@@ -1,58 +1,75 @@
 {
+  "members": [
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Juliano Machado Jr",
+      "email": "ju.machado@gmail.com",
+      "birth": 737856000000,
+      "gender": "M",
+      "blood": "B+",
+      "weight": "68",
+      "heigth": "172",
+      "id": 1
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Bruna Oliveira",
+      "email": "brubru.oli@gmail.com",
+      "birth": 861062400000,
+      "gender": "F",
+      "blood": "AB+",
+      "weight": "58",
+      "heigth": "163",
+      "id": 2
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Victoria Saraiva",
+      "email": "vic_emponderada@gmail.com",
+      "birth": 813283200000,
+      "gender": "F",
+      "blood": "A+",
+      "weight": "55",
+      "heigth": "160",
+      "id": 3
+    }
+  ],
   "instructors": [
     {
       "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Bruno Belarmino Nogueira",
-      "birth": 693100800000,
+      "name": "Paulo Lorena ",
+      "birth": 740188800000,
       "gender": "M",
-      "services": "Crossfit",
+      "services": "Musculação",
       "created_at": 1593037778818
     },
     {
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "avatar_url": "https://images.unsplash.com/flagged/photo-1566064352554-f36ef0ef23b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       "name": "Bianca Nora Jones",
       "birth": 634780800000,
       "gender": "F",
-      "services": "Crossfit",
+      "services": "Crossfit, Yoga",
       "created_at": 1593043565320,
-      "id": "2"
+      "id": 2
     },
     {
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "avatar_url": "https://images.unsplash.com/photo-1583500178450-e59e4309b57d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80",
       "birth": 927590400000,
       "created_at": 1593044338731,
-      "id": "3",
+      "id": 3,
       "gender": "M",
       "name": "Bruno Nogueira",
-      "services": "Crossfit, Natação"
+      "services": "Crossfit, Natação, Musculação"
     },
     {
       "id": 4,
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "avatar_url": "https://images.unsplash.com/photo-1518609571773-39b7d303a87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       "name": "Fernandinha ",
       "birth": 330739200000,
       "gender": "F",
-      "services": "Yoga",
+      "services": "Yoga, Dança",
       "created_at": 1593044450327
-    },
-    {
-      "id": 5,
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Bruno Belarmino Nogueira",
-      "birth": 927590400000,
-      "gender": "M",
-      "services": "Crossfit, Natação",
-      "created_at": 1593469935878
-    },
-    {
-      "id": 6,
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Bruno Belarmino Nogueira",
-      "birth": 927590400000,
-      "gender": "M",
-      "services": "Crossfit, Natação",
-      "created_at": 1593470006262
     }
   ]
 }

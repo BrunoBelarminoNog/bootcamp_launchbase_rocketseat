@@ -92,7 +92,7 @@ header {
 .card .avatar {
     width: 400px;
     height: 100%;
-    background: url(https://source.unsplash.com/collection/9419482/800x800) no-repeat center center / cover;
+    
 }
 
 /************ DETAILS *********/
@@ -145,7 +145,7 @@ header {
 }
 
 /********* FORM *********/
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
@@ -192,4 +192,68 @@ a.button {
 #form-delete button {
     margin-top: 8px;
     background-color: lightcoral;
+}
+
+/******** INDEX INSTRUCTORS *******/
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+
+}
+
+.table-container thead tr th{
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td{
+    border: none;
+}
+tbody tr td:first-child {
+    display: flex;
+}
+
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+
+    box-shadow: 1px 1px 10px -3px black;
+    border: 2px solid rgb(255, 255, 255);
+}
+tbody tr td:last-child a,
+.table-container > a {
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.table-container>a {
+    margin-top: 16px;
+    align-self: center;
+}
+.table-container thead tr th:last-child, td:last-child {
+    text-align: center;
 }
