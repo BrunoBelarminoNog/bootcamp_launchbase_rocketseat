@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+
+
+    <form class="card"  method="POST" action="/teachers">
+        <section class="card_img"  style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUMwt5KAWPn1gG7Rz7BI489xgsXGSeFMNITB9LX_HIDw&usqp=CAU&ec=45673586) no-repeat center center;">
+           
+        </section>
+
+        <section class="card_content">
+                <h3>Novo professor</h3>
+                
+            {% include "fields.njk"%}
+
+            <div class="item">
+            <button type="submit">Cadastrar</button>
+            </div>
+        </section>
+    </form>
+{% endblock content %}

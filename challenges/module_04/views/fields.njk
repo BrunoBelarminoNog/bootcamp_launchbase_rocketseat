@@ -1,0 +1,48 @@
+<div class="item">
+                <div><label for="avatar_url">Avatar</label></div>
+                <div><input type="url" name="avatar_url" placeholder="http://" id="avatar_url" value="{{teacher.avatar_url}}"></div>
+            </div>
+
+            <div class="item">
+                <div><label for="name">Professor</label></div>
+                <div><input type="text" name="name" id="name" value="{{teacher.name}}"></div>
+            </div>
+            <div class="item">
+                <div><label for="birth">Data de nascimento</label></div>
+                <div><input type="date" name="birth" id="birth" value="{{teacher.birth}}"></div>
+            </div>
+            <div class="item">
+                <div><label for="schooling">Grau de escolaridade</label></div>
+                <div>
+                    <select name="schooling" id="">
+                        <option value="" disabled {% if true  %} selected{% endif %}>
+                            Selecione
+                        </option>
+                        <option value="2" {% if teacher.schooling == 2 %}selected{% endif %}>
+                            Ensino Médio Completo
+                        </option>
+                        <option value="3" {% if teacher.schooling == 3 %}selected{% endif %}>
+                            Ensino Superior Completo
+                        </option>
+                        <option value="4" {% if teacher.schooling == 4 %}selected{% endif %}>
+                            Mestrado
+                        </option>
+                        <option value="5" {% if teacher.schooling == 5 %}selected{% endif %}>
+                            Doutorado
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="item">
+                <div><label for="type">Tipo de aula</label></div>
+                <div>
+                    <span><input type="radio" name="type" id="" value="P" {% if teacher.type == "P" %}checked{% endif %}>Presencial</span>
+                    <span><input type="radio" name="type" id="" value="D" {% if teacher.type == "D" %}checked{% endif %}>À distância</span>
+                </div>
+            </div>
+            <div class="item">
+                <div><label for="areas">Área de atuação</label></div>
+                <div>
+                    <input type="text" name="areas" id="" placeholder="Separar as áreas por vírgula." value="{{teacher.areas}}">
+                </div>
+            </div>

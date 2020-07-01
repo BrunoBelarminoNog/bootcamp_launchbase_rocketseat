@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Lessons</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+{% extends "layout.njk" %}
 
-    <header>
-        <div class="header_container">
-            <a href="">Teachers</a>
-            <a href="">Students</a>
-        </div>
-
-    </header>
-
+{% block content %}
     <div class="card">
-        <section class="card_img">
+        <section class="card_img"  style="background: url(https://source.unsplash.com/collection/517198/800x800) no-repeat center center;">
            
         </section>
 
@@ -50,6 +35,4 @@
                 <div>01/01/2019</div>
         </section>
     </div>
-    
-</body>
-</html>
+{% endblock content %}

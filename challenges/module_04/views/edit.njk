@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+
+
+    <form class="card"  method="POST" action="/teachers">
+        <section class="card_img"  style="background: url({{teacher.avatar_url}}) no-repeat center center / cover;">
+           
+        </section>
+
+        <section class="card_content">
+                <h3>Editar professor</h3>
+                
+            {% include "fields.njk"%}
+
+            <div class="item">
+            <button type="submit">Salvar alterações</button>
+            </div>
+        </section>
+    </form>
+{% endblock content %}
