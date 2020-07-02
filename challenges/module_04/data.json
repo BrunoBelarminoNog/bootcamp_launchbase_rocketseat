@@ -1,19 +1,9 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "avatar_url": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Bruno Belarmino Nogueira",
-      "birth": 850608000000,
-      "type": "P",
-      "schooling": "3",
-      "areas": "Português",
-      "created_at": 1593641031202
-    },
-    {
       "id": 2,
       "avatar_url": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Juliano Machado Jr",
+      "name": "Juliano Faria Jr",
       "birth": 392947200000,
       "type": "P",
       "schooling": "4",
@@ -29,6 +19,16 @@
       "schooling": "3",
       "areas": "Matemática, Física",
       "created_at": 1593643585446
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+      "name": "Walquiria Lemos",
+      "birth": 314409600000,
+      "schooling": "5",
+      "type": "P",
+      "areas": "Filosofia, Geografia, História",
+      "id": 4,
+      "created_at": 1593650179099
     }
   ]
 }

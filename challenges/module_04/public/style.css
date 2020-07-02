@@ -172,6 +172,18 @@ form button:hover,
 .card_content a:hover {
     opacity: 1;
 }
-form.card .card_content .item:last-child {
+.card_content form .item:last-child {
     border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.card_content form + form,
+.card_content #delete {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.card_content form+form button {
+    background-color: rgb(241, 80, 80);
 }

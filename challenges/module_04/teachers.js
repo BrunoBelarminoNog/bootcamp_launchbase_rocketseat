@@ -13,29 +13,20 @@ exports.post = function (req, res) {
     }
     console.log(req.body)
 
-    req.body.birth = Date.parse(req.body.birth) //transforma o atributo de data de nascimento no esquema padrao de ms desde 1970
-    req.body.created_at = Date.now() //cria o atributo de data de criação
-    req.body.id = Number(data.teachers.length + 1) //criando o id e seu incremento a cada push
+    let id = 1
+    const lastTeacher = data.teachers[data.teachers.length - 1]
+    if (lastTeacher) {
+        id = lastTeacher.id + 1
+    }
 
-    const {
-        id,
-        avatar_url,
-        name,
-        birth,
-        type,
-        schooling,
-        areas,
-        created_at
-    } = req.body
+    const birth = Date.parse(req.body.birth) //transforma o atributo de data de nascimento no esquema padrao de ms desde 1970
+    const created_at = Date.now() //cria o atributo de data de criação
+    
 
     data.teachers.push({
-        id,
-        avatar_url,
-        name,
+        ...req.body,
         birth,
-        type,
-        schooling,
-        areas,
+        id,
         created_at
     })
 
@@ -47,7 +38,6 @@ exports.post = function (req, res) {
         return res.redirect("/teachers")
     })
 }
-
 
 exports.show = function (req, res) {
     const {id} = req.params
@@ -90,4 +80,52 @@ exports.edit = function (req, res) {
     }
 
     return res.render("edit", {teacher})
+}
+
+exports.put = function (req, res) {
+    const {id} = req.body
+
+    let index = 0
+
+    const teacherFound = data.teachers.find(function (teacher, foundIndex) {
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    })
+    if (!teacherFound) return res.send("Professor não encontrado")
+
+    const teacher = {
+        ...teacherFound,
+        ...req.body,
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
+    }
+
+    data.teachers[index] = teacher
+
+     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+         if (err) {
+             return res.send("write error")
+         }
+
+         return res.redirect(`/teachers/${id}`)
+     })
+}
+
+exports.delete = function (req, res) {
+    const {id} = req.body
+
+    const filteredTeachers = data.teachers.filter(function (teacher) {
+        return teacher.id != id
+        //percorremos o array do data.teachers, se o teacher.id for DIFERENTE do id do req.body, retornará true e sera incluido no array filteredInstructors, caso seja o MESMO ID, retornará false e será FILTRADO/EXCLUIDO da incluisao desse array
+    })
+
+    data.teachers = filteredTeachers //com o array filtrado, atualizamos o data.teachers
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send("Write file error!")
+    })
+
+    return res.redirect("/teachers")
 }
