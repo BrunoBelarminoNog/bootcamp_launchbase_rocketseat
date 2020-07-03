@@ -72,3 +72,31 @@ ul {
     text-indent: 15px;
 }
 
+/******** ADMIN SHOW *******/
+
+section#receita div.admin_receita {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+section#receita div.admin_receita h4 {
+    font-size: 24px;
+    line-height: 28px;
+    color: #111111;
+}
+section#receita div.admin_receita a {
+    width: 136px;
+    height: 37px;
+    background-color: #6558c3;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

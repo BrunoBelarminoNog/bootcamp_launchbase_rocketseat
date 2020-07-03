@@ -10,13 +10,15 @@
 /*********** HEADER ***********/
 
 header {
-    width: 90%;
-    max-width: 940px;
+    width: 100%;
     margin: 0 auto;
 }
 
 header .container_header {
-    height: 93px;
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+    height: 80px;
     display: flex;
     align-items: center;
 }
@@ -47,6 +49,19 @@ header .container_header #menu_header ul li a {
     font-size: 16px;
     line-height: 19px;
 }
+
+
+/********* ADMIN HEADER *****/
+header#admin_header {
+    background-color: #111111;
+}
+header#admin_header .container_header #logo_header {
+    background: url(../assets/logo2.png) no-repeat center right;
+}
+header#admin_header .container_header #menu_header ul li a {
+    color: #eeeeee;
+}
+
 
 /********** MAIN ************/
 

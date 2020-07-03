@@ -1,0 +1,118 @@
+section.page_create {
+    margin: 50px auto;
+}
+
+form#new_recipe .admin_receita {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form#new_recipe .admin_receita h4 {
+    color: #111111;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+button#save_recipe {
+    background-color: #6558c3;
+    width: 139px;
+    height: 37px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+div.receita_descricao_titles {
+    margin-top: 30px;
+}
+div.receita_descricao_titles h2 {
+    color: #111111;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+div.receita_input div > div {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    align-items: center;
+}
+div.receita_input input,
+div.receita_infos textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+    outline: none;
+}
+div.receita_infos textarea {
+    margin-top: 10px;
+}
+
+div.receita_input input {
+    font-size: 16px;
+    padding: 8px;
+}
+div.receita_input div span {
+    padding: 8px;
+    font-weight: bold;
+    color: #6558c3;
+    cursor: pointer;
+}
+
+div.receita_input div span.hidden,
+div.receita_input div span.hidden2 {
+    visibility: hidden;
+}
+
+div.receita_input > span {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #6558c3;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+/******* PAGE EDIT *********/
+
+section#edit_receita {
+    margin: 50px auto;
+}
+
+section#edit_receita .admin_receita {
+    float: left;
+    width: 82%;
+    display: grid;
+    grid-template-columns: 1fr 140px;
+}
+button#delete_recipe {
+    background-color: #dc4747;
+    width: 139px;
+    height: 37px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+section#edit_receita button#save_recipe {
+    float: right;
+}
+
+section#edit_receita span.cleaner {
+    display: block;
+    clear: both;
+}
