@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<form class="card" method="POST" action="/members">
+    <section class="avatar" style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUMwt5KAWPn1gG7Rz7BI489xgsXGSeFMNITB9LX_HIDw&usqp=CAU&ec=45673586) no-repeat center center;">
+
+    </section>
+    <section class="details">
+        <h3>Novo membro</h3>
+
+        {% include 'members/fields.njk' %}
+        
+    </section>
+</form>
+
+{% endblock content %}

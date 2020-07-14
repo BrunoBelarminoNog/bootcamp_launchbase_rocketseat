@@ -7,20 +7,18 @@ for (let card of cards) {
     card.addEventListener('click', function () {
         const cursoId = card.getAttribute('id')
 
-        window.location.href = `/courses/${cursoId}`
 
-        /*
+        
         modalOverlay.classList.add('active')
         modalOverlay.querySelector('iframe').src = `https://rocketseat.com.br/${cursoId}`
         maximizeMOdal.href = `https://rocketseat.com.br/${cursoId}`
-        */
+        
     })
     
 }
-/*
+
 closeModal.addEventListener('click', function () {
     modalOverlay.classList.remove('active')
     modalOverlay.querySelector('iframe').src = ""
 })
 
-*/
