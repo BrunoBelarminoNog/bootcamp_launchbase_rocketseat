@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-height: 100%;
+    background: url(./imgs/photo-1513542789411-b6a5d4f31634.jpg) no-repeat bottom center / cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+div.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*************** HEADER **************/
+header {
+    width: 100%;
+    background-color: rgba(185, 185, 185, 0.493);
+}
+
+header .header_container {
+    padding: 32px;
+    font-size: 22px;
+    text-align: center;
+}
+header .header_container a {
+    text-decoration: none;
+    color: snow;
+    position: relative;
+
+}
+header .header_container a + a {
+    margin-left: 20px;
+}
+header .header_container a::after {
+    content: "";
+    width: 100%;
+    height: 0px;
+    background-color: rgb(131, 131, 131);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+header .header_container a:hover::after {
+    height: 5px;
+    transition: height 300ms ease-in-out;
+}
+
+header .header_container a:hover {
+    color: rgb(131, 131, 131);
+    transition: color 300ms ease-in-out;
+}
+header .header_container a.active {
+    font-weight: bold;
+    color: #000000;
+}
+
+/**************** CARD ******************/
+
+.card {
+    width: 800px;
+    min-height: 400px;
+
+    margin: 80px auto;
+
+    background-color: rgba(211, 211, 211, 0.726);
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.61);
+    
+    animation: up;
+    animation-duration: 1s;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.card .card_img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .card_content {
+    padding: 20px;
+}
+
+.card .card_content h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: #666;
+}
+.card .card_content .item {
+    padding: 8px;
+    border-top: 2px solid rgba(0, 0, 0, 0.199);
+}
+.card .card_content .item:nth-child(2) {
+    border: none;
+}
+
+.item div:nth-child(1){
+    font-size: 14px;
+    color: #777;
+}
+
+.item div:nth-child(2) {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px;
+}
+
+.item span {
+    padding: 4px 8px;
+    background-color: #009e00af;
+    border-radius: 16px;
+    display: inline-block;
+    margin-top: 4px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+/******* FORM ********/
+
+form div.item input, 
+form div.item select {
+    width: 100%;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+form div.item input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+form button,
+.card_content a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #009e00af;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 8px;
+    opacity: 0.7;
+}
+
+form button:hover,
+.card_content a:hover {
+    opacity: 1;
+}
+.card_content form .item:last-child {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.card_content form + form,
+.card_content #delete {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.card_content form+form button {
+    background-color: rgb(241, 80, 80);
+}
+
+/************* TABLE **********/
+div.card.table-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card table {
+    border: 1px solid black;
+}
+

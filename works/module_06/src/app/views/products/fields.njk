@@ -1,0 +1,79 @@
+<div class="item">
+    <div>Categoria</div>
+    <div>
+        <select name="category_id" id="">
+            {% for category in categories %}
+            <option value="{{category.id}}" {% if products.category_id == category.id %}
+            selected{% endif %}>
+                {{category.name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Título</div>
+    <div>
+        <input type="text" name="name" id="" placeholder="Digite o título do anúncio" value="{{ product.name}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Descrição</div>
+    <div>
+        <textarea name="description" id="" cols="30" rows="10">{{product.description}}</textarea>
+    </div>
+</div>
+
+<div class="item">
+    <div>Fotos</div>
+    <div>
+        <div id="photos-upload">
+            <input type="file" name="photos" multiple id="photos-input" accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
+            <p>Selecione até 6 fotos</p>
+        </div>
+        <div id="photos-preview"></div>
+    </div>
+</div>
+
+<div class="item">
+    <div>Valor</div>
+    <div>
+        <input type="text" name="price" id="" placeholder="Preço do produto" value="{{ product.price}}" onkeydown="Mask.apply(this, 'formatBRL')" >
+    </div>
+    {% if product.old_price %}
+        <input type="hidden" name="old_price" value={{product.old_price}}>
+    {% endif %}
+</div>
+
+<div class="item">
+    <div>Quantidade</div>
+    <div>
+        <input type="number" name="quantity" id="" placeholder="Estoque disponível" value="{{ product.quantity}}">
+    </div>
+</div>
+
+{% if (product.status == "1") or (product.status == "0") %}
+    <div class="item">
+        <div>Disponível</div>
+        <div>
+            <label for="status1">
+            <span>
+                <input type="radio" name="status" id="status1" value="1" {% if product.status == "1" %} checked
+                {% endif %}>
+                Sim
+            </span>
+            </label>
+            <label for="status0">
+            <span>
+                <input type="radio" name="status" id="status0" value="0" {% if product.status == "0" %} checked
+                {% endif %}>
+                Não
+            </span>
+            </label>
+        </div>
+    </div>
+{% endif %}
+
+

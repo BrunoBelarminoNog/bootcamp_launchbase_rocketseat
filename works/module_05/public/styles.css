@@ -201,6 +201,7 @@ a.button {
     flex-direction: column;
     padding: 40px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .table-container table {
@@ -240,8 +241,8 @@ tbody tr td:first-child span {
     box-shadow: 1px 1px 10px -3px black;
     border: 2px solid rgb(255, 255, 255);
 }
-tbody tr td:last-child a,
-.table-container > a {
+
+.table-container a {
     background-color: var(--primary-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -249,12 +250,65 @@ tbody tr td:last-child a,
     color: #fff;
     font-size: 12px;
     border-radius: 4px;
-}
-.table-container>a {
-    margin-top: 16px;
     align-self: center;
+    text-align: center;
 }
 .table-container thead tr th:last-child, td:last-child {
     text-align: center;
 }
 
+/******** FILTERS *********/
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.table-container .header a,
+.table-container .header button {
+    margin-top: 0;
+}
+.table-container .header button {
+    border-radius: 0 4px 4px 0;
+}
+.table-container .header a{
+    width: 120px;
+}
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+}
+.table-container .header form input {
+    border: 1px solid rgb(175, 175, 175);
+    border-right: none;
+    padding: 6px 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 18px;
+}
+/******** PAGINATION *******/
+
+.table-container .pagination {
+    align-self: center;
+    justify-self: flex-end;
+    margin-top: 16px;
+    position: absolute;
+    bottom: 16px;
+}
+.table-container .pagination a {
+    background-color: initial;
+    color: var(--primary-color);
+    font-size: 16px;
+    margin: 2px;
+    padding: 2px 8px;
+}
+.table-container .pagination a:hover {
+    background-color: #7159c138;
+}
+.table-container .pagination a:first-child{
+    margin-left: 0;
+}
+.table-container .pagination a:last-child{
+    margin-right: 0;
+}
