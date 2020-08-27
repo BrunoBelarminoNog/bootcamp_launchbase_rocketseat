@@ -144,3 +144,39 @@ const PhotosUpload = {
 }
 // MULTER ->> npm install multer - midleware para envio de arquivos
 
+const ImageGallery = {
+    highlight: document.querySelector('.gallery .highlight > img'),
+    previews: document.querySelectorAll('.gallery-preview img'),
+    lightboxImage: document.querySelector(".lightbox-target img"),
+    setImage(e) {
+        const {target} = e
+
+        ImageGallery.previews.forEach(preview => preview.classList.remove('active'))
+        target.classList.add('active')
+
+        ImageGallery.highlight.src = target.src
+        ImageGallery.highlight.alt = target.alt
+        ImageGallery.lightboxImage.src = target.src
+
+    },
+}
+
+const Lightbox = {
+    target: document.querySelector(".lightbox-target"),
+    image: document.querySelector(".lightbox-target img"),
+    button: document.querySelector(".lightbox-target a.lightbox-close"),
+    open() {
+        Lightbox.target.style.opacity = 1
+        Lightbox.target.style.top = 0
+        Lightbox.target.style.bottom = 0
+
+        Lightbox.button.style.top = 0
+    },
+    close() {
+        Lightbox.target.style.opacity = 0
+        Lightbox.target.style.top = "-100%"
+        Lightbox.target.style.bottom = "initial"
+
+        Lightbox.button.style.top = "-80px"
+    }
+}

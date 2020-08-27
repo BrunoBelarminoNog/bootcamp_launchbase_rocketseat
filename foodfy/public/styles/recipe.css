@@ -86,17 +86,3 @@ section#receita div.admin_receita h4 {
     line-height: 28px;
     color: #111111;
 }
-section#receita div.admin_receita a {
-    width: 136px;
-    height: 37px;
-    background-color: #6558c3;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
