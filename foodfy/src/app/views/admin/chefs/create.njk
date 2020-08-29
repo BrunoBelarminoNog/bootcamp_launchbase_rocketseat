@@ -20,31 +20,8 @@
             <button id="save_recipe" type="submit">Salvar chef</button>
         </div>
 
-        <div class="receita_descricao">
-
-            <div class="receita_descricao_titles">
-                <h2>Nome</h2>
-            </div>
-            <div class="receita_input">
-                <div>
-                    <div>
-                        <input type="text" name="name" id="" >
-                    </div>
-                </div>
-            </div>
-
-            <div class="receita_descricao_titles">
-                <h2>Avatar</h2>
-            </div>
-            <div class="receita_input">
-                <div>
-                    <div>
-                        <input type="url" name="avatar_url" id="" placeholder="https://">
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+        {%include "./fields.njk"%}
+        
     </form>
 </section>
 

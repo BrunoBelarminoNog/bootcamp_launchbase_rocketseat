@@ -1,0 +1,92 @@
+<div class="receita_descricao">
+    {% if item %}
+        <input type="hidden" name="id" value="{{item.id}}">
+    {% endif %}
+    <div class="receita_descricao_titles">
+        <h2>Imagem da receita</h2>
+    </div>
+    <div class="receita_input">
+        <div>
+            <div>
+                <input type="text" name="image" id="" value="{{item.image}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="receita_descricao_titles">
+        <h2>Título da receita</h2>
+    </div>
+    <div class="receita_input">
+        <div>
+            <div>
+                <input type="text" name="title" id="" value="{{item.title}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="receita_descricao_titles">
+        <h2>Chef</h2>
+    </div>
+    <div class="receita_input">
+        <div>
+            <div>
+                <select name="chef_id" id="">
+                    {% for chef in chefs %}
+                        <option value="{{chef.id}}" {% if chef.id == item.chef_id %} selected="selected" {% endif %}>{{chef.name}} </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="receita_descricao_titles">
+        <h2>Ingredientes</h2>
+    </div>
+    <div class="receita_input">
+        <div id="ingredients">
+            {% if item %}
+                {% for ingredient in item.ingredients %}
+                    <div class="new_ingredients">
+                        <input type="text" name="ingredients[]" id="" value="{{ingredient}}">
+                        <span onclick="removeIngredient(this)" class="material-icons span_ing" title="Excluir">clear</span>
+                    </div>
+                {% endfor %}
+                {%else%}
+                <div class="new_ingredients">
+                    <input type="text" name="ingredients[]" id="" value="{{ingredient}}">
+                    <span onclick="removeIngredient(this)" class="material-icons span_ing" title="Excluir">clear</span>
+                </div>
+            {% endif %}
+        </div>
+        <span onclick="newIngredient()">Adicionar novo ingrediente</span>
+    </div>
+
+    <div class="receita_descricao_titles">
+        <h2>Modo de preparo</h2>
+    </div>
+    <div class="receita_input">
+        <div id="preparation">
+            {% if item %}
+                {% for preparation in item.preparation %}
+                    <div class="new_preparation">
+                        <input type="text" name="preparation[]" id="" value="{{preparation}}">
+                        <span onclick="removePreparation(this)" class="material-icons span_prep" title="Excluir">clear</span>
+                    </div>
+                {% endfor %}
+                {%else%}
+                <div class="new_preparation">
+                    <input type="text" name="preparation[]" id="" value="{{preparation}}">
+                    <span onclick="removePreparation(this)" class="material-icons span_prep" title="Excluir">clear</span>
+                </div>
+            {% endif %}
+
+        </div>
+        <span onclick="newPreparation()">Adicionar novo passo</span>
+    </div>
+    <div class="receita_descricao_titles">
+        <h2>Informações adicionais</h2>
+    </div>
+    <div class="receita_infos">
+        <textarea name="information" id="" cols="30" rows="10">{{item.information}}</textarea>
+    </div>
+</div>

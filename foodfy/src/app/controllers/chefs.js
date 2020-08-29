@@ -1,5 +1,6 @@
 const Chefs = require('../models/Chefs')
 const Recipes = require('../models/Recipes')
+const { edit } = require('./admin')
 
 module.exports = {
     async index(req, res) {
@@ -27,6 +28,14 @@ module.exports = {
         return res.render("admin/chefs/show", {chef, recipes})
 
     },
+    async edit(req, res) {
+        const {id} = req.params
+
+        let result = await Chefs.find(id)
+        const chef = result.rows[0]
+
+        return res.render("./admin/chefs/edit", {chef})
+    },
     async post(req, res) {
         const keys = Object.keys(req.body);
 
@@ -40,5 +49,25 @@ module.exports = {
         const chefId = results.rows[0].id
 
         return res.redirect(`/admin/chefs/${chefId}`)
+    },
+    async put(req, res) {
+        const keys = Object.keys(req.body)
+
+        for(key of keys) {
+            if (key == "") {
+                return res.send("Please, fill all fields!")
+            }
+        }
+
+        await Chefs.update(req.body)
+
+        return res.redirect(`/admin/chefs/${req.body.id}`)
+    },
+    async delete(req, res) {
+        const {id} = req.body
+
+        await Chefs.delete(id)
+
+        return res.redirect("/admin/chefs")
     }
 }   

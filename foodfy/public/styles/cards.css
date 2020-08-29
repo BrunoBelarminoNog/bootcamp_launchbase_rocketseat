@@ -3,10 +3,6 @@ section#receitas {
     margin: 50px auto
 }
 
-section#receitas.page_receitas {
-    margin: 10px auto 50px auto;
-}
-
 section#receitas .receitas_cabecalho h2 {
     color: #111111;
     font-size: 24px;
@@ -32,9 +28,15 @@ section#receitas .receitas_cards .card a {
 section#receitas .receitas_cards .card a:hover {
     text-decoration: underline #FBDFDB;
 }
+section#receitas .receitas_cards .card .card_img {
+    height: 140px;
+}
 
 section#receitas .receitas_cards .card img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
     border-radius: 15px;
 }
 

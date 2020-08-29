@@ -28,9 +28,16 @@
                 <ul>
                     <li><a href="/sobre">Sobre</a></li>
                     <li><a href="/receitas">Receitas</a></li>
+                    <li><a href="/chefs">Chefs</a></li>
                 </ul>
             </div>
-        </div>
+            <div id="search">
+                <form action="/receitas" method="get">
+                    <input type="text" name="filter" placeholder="Buscar uma receita" value="{{filter}}">
+                    <button class="button" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div> 
     </header>
 
 

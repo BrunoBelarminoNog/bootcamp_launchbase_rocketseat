@@ -7,7 +7,7 @@ module.exports = {
         let results = await Recipes.all()
         let recipes = results.rows
 
-        for(recipe of recipes) {
+        for (recipe of recipes) {
             let result = await Chefs.findName(recipe.chef_id)
             let nameChef = result.rows[0]
 
@@ -24,7 +24,9 @@ module.exports = {
         let results = await Recipes.chefSelectOptions()
         const options = results.rows
 
-        res.render("./admin/recipes/create", {chefs: options})
+        res.render("./admin/recipes/create", {
+            chefs: options
+        })
     },
     async show(req, res) {
         const {
@@ -42,97 +44,67 @@ module.exports = {
         }
 
         return res.render("./admin/recipes/show", {
-            item: recipe, chef
+            item: recipe,
+            chef
         })
     },
-    edit(req, res) {
+    async edit(req, res) {
         const {
             id
         } = req.params
 
-        const foundRecipe = data.recipes.find(function (recipe) {
-            if (recipe.id == id)
-                return true
-        })
+        let results = await Recipes.find(id)
+        const foundRecipe = results.rows[0]
 
         if (!foundRecipe) {
             return res.send("Receita não encontrada")
         }
 
+        results = await Recipes.chefSelectOptions()
+        const chefs = results.rows
+
+
         return res.render("./admin/recipes/edit", {
-            item: foundRecipe
+            item: foundRecipe,
+            chefs
         })
     },
     async post(req, res) {
         const keys = Object.keys(req.body);
 
-        for(key of keys){
-            if(req.body[key] == "") return res.send("Please, fill all fields!")
-        } 
+        for (key of keys) {
+            if (req.body[key] == "") return res.send("Please, fill all fields!")
+        }
 
         const result = await Recipes.create(req.body)
         const recipeId = result.rows[0].id
 
-            return res.redirect(`/admin/receitas/${recipeId}`)
+        return res.redirect(`/admin/receitas/${recipeId}`)
 
-    }
-    /*
-    put(req, res) {
-        const {
-            id
-        } = req.body
-        let index = 0
-
-        const foundRecipe = data.recipes.find(function (recipe, indexFound) {
-            if (recipe.id == id) {
-                index = indexFound
-                return true
-            }
-        })
-
-        if (!foundRecipe) {
-            return res.send("Dados não encontrados")
-        }
-
-        const recipe = {
-            ...foundRecipe,
-            ...req.body,
-            id: Number(req.body.id)
-        }
-
-        data.recipes[index] = recipe;
-
-        fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-            if (err) {
-                return res.send("write error")
-            }
-
-            return res.redirect(`/admin/receitas/${id}`)
-        })
     },
-    delete(req, res) {
+    async put(req, res) {
+        const keys = Object.keys(req.body)
+
+        for (key of keys) {
+            if (key == "") {
+                return res.send('Please, fill all fields!')
+            }
+        }
+
+        await Recipes.update(req.body)
+
+        return res.redirect(`/admin/receitas/${req.body.id}`)
+
+    },
+    async delete(req, res) {
         const {
             id
         } = req.body
 
-        const filteredRecipes = data.recipes.filter(function (recipe) {
-            if (recipe.id != id) {
-                return true
-            }
-        })
+        await Recipes.delete(id)
 
-        data.recipes = filteredRecipes;
+        return res.redirect("/admin/receitas")
 
-        fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-            if (err) {
-                return res.send("Erro na gravação dos dados")
-            }
-
-            return res.redirect("/admin/receitas")
-
-        })
-        
     }
-    */
 
 }

@@ -33,8 +33,44 @@ module.exports = {
         return db.query(`
             SELECT * FROM recipes WHERE id = $1`, [id])
     },
+    findBy(filter) {
+        const query = `
+        SELECT * FROM recipes
+        WHERE recipes.title ILIKE '%${filter}%'
+        ORDER BY title ASC 
+        `
+        return db.query(query)
+    },
+    update(data) {
+        const query = `
+            UPDATE recipes SET
+                image=($1),
+                title=($2),
+                chef_id=($3),
+                ingredients=($4),
+                preparation=($5),
+                information=($6)
+            WHERE id = $7
+        `
+
+        const values = [
+            data.image,
+            data.title,
+            data.chef_id,
+            data.ingredients,
+            data.preparation,
+            data.information,
+            data.id
+        ]
+
+        return db.query(query, values)
+
+    },
+    delete(id) {
+        return db.query(`DELETE FROM recipes WHERE id = $1`, [id])
+    },
     chefSelectOptions() {
-       return db.query(`SELECT name, id FROM chefs`)
+        return db.query(`SELECT name, id FROM chefs`)
     },
     chefRecipes(id) {
         return db.query(`
