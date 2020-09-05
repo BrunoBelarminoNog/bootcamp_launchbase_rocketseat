@@ -19,7 +19,7 @@
         </form>
     </div>
 
-    <form action="/admin/receitas?_method=PUT" method="post">
+    <form action="/admin/receitas?_method=PUT" method="post"  enctype="multipart/form-data">
         <button id="save_recipe" type="submit">Salvar Receita</button>
         <span class="cleaner"></span>
         {% include './fields.njk' %}

@@ -16,8 +16,14 @@
             </div>
             <div class="receita_input">
                 <div>
-                    <div>
-                        <input type="url" name="avatar_url" value="{{chef.avatar_url}}" id="" placeholder="https://">
+                    {% if file %}
+                        <div>
+                            <input type="text" name="fileChef" value="{{file.path}}" id="">
+                        </div>
+                    {% endif %}
+                    <div class="avatar-upload">
+                        <input type="file" name="avatar" value="{{file}}" accept="image/*" id="avatar-input" placeholder="https://">
+                        <p>Enviar Avatar</p>
                     </div>
                 </div>
             </div>

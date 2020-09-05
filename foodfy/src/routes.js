@@ -3,6 +3,8 @@ const routes = express.Router();
 const site = require("./app/controllers/site")
 const admin = require("./app/controllers/admin")
 const chefs = require("./app/controllers/chefs")
+const multer = require('./app/middlewares/multer')
+
 
 
 //ROTAS PUBLICAS
@@ -20,8 +22,8 @@ routes.get("/admin/receitas/create", admin.create);
 routes.get("/admin/receitas/:id", admin.show);
 routes.get("/admin/receitas/:id/edit", admin.edit);
 
-routes.post("/admin/receitas", admin.post);
-routes.put("/admin/receitas", admin.put);
+routes.post("/admin/receitas", multer.array("photos", 5), admin.post);
+routes.put("/admin/receitas", multer.array("photos", 5), admin.put);
 routes.delete("/admin/receitas", admin.delete);
 
 
@@ -32,8 +34,8 @@ routes.get("/admin/chefs/:id", chefs.show)
 routes.get("/admin/chefs/:id/edit", chefs.edit);
 
 
-routes.post("/admin/chefs", chefs.post)
-routes.put("/admin/chefs", chefs.put)
+routes.post("/admin/chefs", multer.array("avatar", 1), chefs.post)
+routes.put("/admin/chefs", multer.array("avatar", 1), chefs.put)
 routes.delete("/admin/chefs", chefs.delete)
 
 

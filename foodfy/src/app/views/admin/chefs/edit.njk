@@ -19,7 +19,7 @@
             </form>
         </div>
 
-        <form action="/admin/chefs?_method=PUT" method="post">
+        <form action="/admin/chefs?_method=PUT" method="post" enctype="multipart/form-data">
             <button id="save_recipe" type="submit">Editar chef</button>
             <span class="cleaner"></span>
             <input type="hidden" name="id" value="{{chef.id}}">

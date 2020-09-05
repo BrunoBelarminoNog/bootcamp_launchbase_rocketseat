@@ -6,9 +6,26 @@
         <h2>Imagem da receita</h2>
     </div>
     <div class="receita_input">
-        <div>
-            <div>
-                <input type="text" name="image" id="" value="{{item.image}}">
+        <div id="photos-gallery">
+            <!-- <div> <input type="text" name="imageee" id="" value="{{item.image}}"> </div> -->
+            <div id="photos-upload">
+                <input type="file" name="photos" multiple="multiple" id="photos-input" accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
+                <span class="material-icons">
+                    add
+                </span>
+            </div>
+            <div id="photos-preview">
+                {% if files %}
+                    {% for image in files %}
+                        <div class="photo" id="{{image.id}}">
+                            <img src="{{image.src}}" alt="{{image.name}}">
+                            <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">
+                                close
+                            </i>
+                        </div>
+                    {% endfor %}
+                    <input type="hidden" name="removed_files">
+                {% endif %}
             </div>
         </div>
     </div>
@@ -32,7 +49,8 @@
             <div>
                 <select name="chef_id" id="">
                     {% for chef in chefs %}
-                        <option value="{{chef.id}}" {% if chef.id == item.chef_id %} selected="selected" {% endif %}>{{chef.name}} </option>
+                        <option value="{{chef.id}}" {% if chef.id == item.chef_id %} selected="selected" {% endif %}>{{chef.name}}
+                        </option>
                     {% endfor %}
                 </select>
             </div>

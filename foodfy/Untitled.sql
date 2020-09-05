@@ -15,4 +15,18 @@ CREATE TABLE "chefs" (
   "avatar_url" text
 );
 
-ALTER TABLE "chefs" ADD FOREIGN KEY ("id") REFERENCES "recipes" ("chef_id");
+CREATE TABLE "files" (
+  "id" SERIAL PRIMARY KEY,
+  "name" text,
+  "path" text NOT NULL
+);
+
+CREATE TABLE "recipe_files" (
+  "id" SERIAL PRIMARY KEY,
+  "recipe_id" int,
+  "file_id" int UNIQUE
+);
+
+ALTER TABLE "recipe_files" ADD FOREIGN KEY ("recipe_id") REFERENCES "recipes" ("id");
+
+ALTER TABLE "recipe_files" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");

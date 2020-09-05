@@ -15,8 +15,24 @@ module.exports = {
             recipe.chef_id = nameChef.name
         }
 
+        async function getImage(recipeId) {
+            let results = await Recipes.files(recipeId);
+            const files = results.rows.map(file =>
+                `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+            );
+
+            return files[0];
+        }
+
+        const recipesPromise = recipes.map(async recipe => {
+            recipe.image = await getImage(recipe.id)
+            return recipe
+        });
+
+        const allSet = await Promise.all(recipesPromise);
+
         return res.render("./site/index", {
-            items: recipes
+            items: allSet
         })
     },
     about(req, res) {
@@ -51,8 +67,24 @@ module.exports = {
             recipe.chef_id = nameChef.name
         }
 
+        async function getImage(recipeId) {
+            let results = await Recipes.files(recipeId);
+            const files = results.rows.map(file =>
+                `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+            );
+
+            return files[0];
+        }
+
+        const recipesPromise = recipes.map(async recipe => {
+            recipe.image = await getImage(recipe.id)
+            return recipe
+        });
+
+        const allSet = await Promise.all(recipesPromise);
+
         return res.render("./site/recipes", {
-            items: recipes
+            items: allSet
         })
     },
     async show(req, res) {
@@ -66,13 +98,28 @@ module.exports = {
 
         recipe.chef_id = chefName
 
+        results = await Recipes.files(recipe.id);
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }));
+
         return res.render("./site/recipe", {
-            item: recipe
+            item: recipe,
+            files
         })
     },
     async chefs(req, res) {
-        const results = await Chefs.all()
-        const chefs = results.rows
+        let results = await Chefs.all()
+        let chefs = results.rows
+
+        for (chef of chefs) {
+
+            results = await Chefs.files(chef.file_id)
+            const file = results.rows[0]
+
+            chef.file_id = `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }
 
         return res.render("./site/chefs", {
             chefs
