@@ -1,13 +1,12 @@
 <div class="receita_descricao">
-    {% if item %}
-        <input type="hidden" name="id" value="{{item.id}}">
+    {% if recipe %}
+        <input type="hidden" name="id" value="{{recipe.id}}">
     {% endif %}
     <div class="receita_descricao_titles">
         <h2>Imagem da receita</h2>
     </div>
     <div class="receita_input">
         <div id="photos-gallery">
-            <!-- <div> <input type="text" name="imageee" id="" value="{{item.image}}"> </div> -->
             <div id="photos-upload">
                 <input type="file" name="photos" multiple="multiple" id="photos-input" accept="image/*" onchange="PhotosUpload.handleFileInput(event)">
                 <span class="material-icons">
@@ -36,7 +35,7 @@
     <div class="receita_input">
         <div>
             <div>
-                <input type="text" name="title" id="" value="{{item.title}}">
+                <input type="text" name="title" id="" value="{{recipe.title}}">
             </div>
         </div>
     </div>
@@ -49,7 +48,7 @@
             <div>
                 <select name="chef_id" id="">
                     {% for chef in chefs %}
-                        <option value="{{chef.id}}" {% if chef.id == item.chef_id %} selected="selected" {% endif %}>{{chef.name}}
+                        <option value="{{chef.id}}" {% if chef.id == recipe.chef_id %} selected="selected" {% endif %}>{{chef.name}}
                         </option>
                     {% endfor %}
                 </select>
@@ -62,8 +61,8 @@
     </div>
     <div class="receita_input">
         <div id="ingredients">
-            {% if item %}
-                {% for ingredient in item.ingredients %}
+            {% if recipe %}
+                {% for ingredient in recipe.ingredients %}
                     <div class="new_ingredients">
                         <input type="text" name="ingredients[]" id="" value="{{ingredient}}">
                         <span onclick="removeIngredient(this)" class="material-icons span_ing" title="Excluir">clear</span>
@@ -84,8 +83,8 @@
     </div>
     <div class="receita_input">
         <div id="preparation">
-            {% if item %}
-                {% for preparation in item.preparation %}
+            {% if recipe %}
+                {% for preparation in recipe.preparation %}
                     <div class="new_preparation">
                         <input type="text" name="preparation[]" id="" value="{{preparation}}">
                         <span onclick="removePreparation(this)" class="material-icons span_prep" title="Excluir">clear</span>
@@ -105,6 +104,7 @@
         <h2>Informações adicionais</h2>
     </div>
     <div class="receita_infos">
-        <textarea name="information" id="" cols="30" rows="10">{{item.information}}</textarea>
+        <textarea name="information" id="" cols="30" rows="10">{{recipe.information}}</textarea>
+        <input type="hidden" name="user_id" {% if user %} value="{{user.id}}"{% endif %} {% if recipe.user_id %} value="{{recipe.user_id}}" {% endif %}>
     </div>
 </div>

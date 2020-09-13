@@ -12,8 +12,8 @@
 <section id="receita" class="page_receita">
 
     <div class="admin_receita">
-        <h4>Receita: {{item.title}}</h4>
-        <a class="button" href="/admin/receitas/{{item.id}}/edit">Editar Receita</a>
+        <h4>Receita: {{recipe.title}}</h4>
+        <a class="button" href="/admin/receitas/{{recipe.id}}/edit">Editar Receita</a>
     </div>
 
     
@@ -43,8 +43,8 @@
     
 
     <div class="receita_title">
-        <h1>{{item.title}}</h1>
-        <h3>por {{chef}}</h3>
+        <h1>{{recipe.title}}</h1>
+        <h3>por {{recipe.chef_name}}</h3>
     </div>
 
     <div class="receita_descricao">
@@ -54,7 +54,7 @@
         </div>
         <div class="receita_ingredientes">
             <ul>
-                {% for ingredientes in item.ingredients %}
+                {% for ingredientes in recipe.ingredients %}
                 <li>{{ingredientes}}</li>
                 {% endfor %}
             </ul>
@@ -65,18 +65,18 @@
         </div>
         <div class="receita_preparo">
             <ul>
-                {% for preparo in item.preparation %}
+                {% for preparo in recipe.preparation %}
                 <li>{{preparo}}</li>
                 {% endfor %}
             </ul>
         </div>
-        {% if (item.information) %}
+        {% if (recipe.information) %}
         <div class="receita_descricao_titles">
             <h2>Informações adicionais</h2>
             <span id='infos' onclick="esconder('receita_infos', 'infos')">ESCONDER</span>
         </div>
         <div class="receita_infos">
-            <p>{{item.information}}</p>
+            <p>{{recipe.information}}</p>
         </div>
         {% endif %}
     </div>

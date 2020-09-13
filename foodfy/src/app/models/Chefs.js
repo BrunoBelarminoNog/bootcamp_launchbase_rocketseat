@@ -10,7 +10,7 @@ module.exports = {
         ORDER BY name asc
         `)
     },
-    create(data) {
+    async create(data) {
         const query = `
             INSERT INTO chefs (
                 name,
@@ -23,7 +23,10 @@ module.exports = {
             data.file_id
         ]
 
-        return db.query(query, values)
+        const results = await db.query(query, values);
+        const chefId = results.rows[0].id;
+
+        return chefId
     },
     find(id) {
         return db.query(`
@@ -34,22 +37,17 @@ module.exports = {
             GROUP BY chefs.id
             `, [id])
     },
-    findName(id) {
-        return db.query(`
-            SELECT name FROM chefs WHERE id = $1
-        `, [id])
-    },
     update(data) {
         const query = `
             UPDATE chefs SET
             name = ($1),
-            avatar_url = ($2)
+            file_id = ($2)
             WHERE id = $3
         `
 
         const values = [
             data.name,
-            data.avatar_url,
+            data.file_id,
             data.id
         ]
 

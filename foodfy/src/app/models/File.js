@@ -34,23 +34,6 @@ module.exports = {
 
         return db.query(query, values); 
     },
-    /*createRecipeFile(fileId, recipeId) {
-    
-            const query = `
-            INSERT INTO recipe_files (
-                recipe_id,
-                file_id
-            ) VALUES ($1, $2)
-            RETURNING id
-        `
-
-            const values = [
-                recipeId,
-                fileId
-            ]
-
-            return db.query(query, values)
-    },*/
     async createChefAvatar({ filename, path }) {
         let query = `
                 INSERT INTO files (

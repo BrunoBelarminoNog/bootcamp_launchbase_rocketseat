@@ -16,13 +16,16 @@
             </div>
             <div class="receita_input">
                 <div>
-                    {% if file %}
-                        <div>
-                            <input type="text" name="fileChef" value="{{file.path}}" id="">
-                        </div>
-                    {% endif %}
+                    <div id="avatar-preview">
+
+
+                        {% if file %}
+                                <input type="text" name="fileChef" value="{{file.path}}">
+                        {% endif %}
+                    </div>
+
                     <div class="avatar-upload">
-                        <input type="file" name="avatar" value="{{file}}" accept="image/*" id="avatar-input" placeholder="https://">
+                        <input type="file" name="avatar" value="{{file}}" accept="image/*" id="avatar-input" placeholder="https://" onchange="PhotoChef.fileInput(event)">
                         <p>Enviar Avatar</p>
                     </div>
                 </div>

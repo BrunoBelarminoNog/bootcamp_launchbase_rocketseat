@@ -9,6 +9,7 @@
 .chefs_cards .card{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .chefs_cards .card .card_img {
     margin-right: 20px;
@@ -61,7 +62,7 @@ section#site_chefs .chefs_cards .card .card_content {
     gap: 5px;
 }
 
-/**** SHOW ADMIN ****/
+/**** SHOW CHEF ****/
 
 section#admin_chefs div.chef_title {
     display: flex;
@@ -76,13 +77,15 @@ section#admin_chefs div.chef_title h1 {
 }
 
 
-section#admin_chefs .chef_content {
+section#admin_chefs .chef_content,
+section#site_chefs .chef_content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-section#admin_chefs .chef_content img {
+section#admin_chefs .chef_content img,
+section#site_chefs .chef_content img {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -92,17 +95,20 @@ section#admin_chefs .chef_content img {
     margin-bottom: 30px;
 }
 
-section#admin_chefs .chef_content .chef_info {
+section#admin_chefs .chef_content .chef_info,
+section#site_chefs .chef_content .chef_info {
     margin: 0 auto;
     text-align: center;
 }
-section#admin_chefs .chef_content .chef_info h1{
+section#admin_chefs .chef_content .chef_info h1,
+section#site_chefs .chef_content .chef_info h1{
     font-size: 36px;
     line-height: 42px;
     font-weight: bold;
     color: #111111;
 }
-section#admin_chefs .chef_content .chef_info h3 {
+section#admin_chefs .chef_content .chef_info h3,
+section#site_chefs .chef_content .chef_info h3 {
     font-size: 20px;
     line-height: 24px;
     font-weight: normal;

@@ -61,12 +61,21 @@ section#receitas .receitas_cards .card .card_content p {
 
 /******** CARDS ADMIN *********/
 
-#admin_receitas h1 {
+
+section#admin_receitas .header {
     margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#admin_receitas .header h1 {
     font-size: 24px;
     line-height: 28px;
     color: #111111;
 }
+
 #admin_receitas .receitas_cabecalho h3 {
     margin-top: 50px;
     font-size: 18px;

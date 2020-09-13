@@ -13,7 +13,11 @@
 
 <section id="admin_receitas">
 
-    <h1>Gerenciar receitas</h1>
+    <div class="header">
+        <h1>Gerenciar receitas</h1> 
+        <a href="/admin/receitas/create" class="button">Nova Receita</a>
+    </div>
+
     <div class="receitas_cards">
 
         {% for recipe in recipes %}
@@ -23,7 +27,7 @@
                 </div>
                 <div class="card_content">
                     <h3>{{recipe.title}}</h3>
-                    <p>{{recipe.chef_id}}</p>
+                    <p>{{recipe.chef_name}}</p>
                     <a href="/admin/receitas/{{recipe.id}}">Visualizar</a>
                 </div>
         </div>

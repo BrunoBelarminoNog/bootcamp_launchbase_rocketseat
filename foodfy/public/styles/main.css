@@ -31,7 +31,7 @@ header .container_header {
     margin: 0 auto;
     height: 80px;
     display: grid;
-    grid-template-columns: 92px 1fr 1fr;
+    grid-template-columns: 92px 1.5fr 1fr;
     align-items: center;
 }
 
@@ -47,7 +47,8 @@ header .container_header #logo_header h1 {
 
 header .container_header #menu_header ul {
     list-style: none;
-    padding-left: 124px;
+    display: flex;
+    justify-content: center;
 }
 
 header .container_header #menu_header ul li {
@@ -90,18 +91,36 @@ header#admin_header .container_header #menu_header ul li a {
     color: #eeeeee;
 }
 
+header#admin_header .container_header .logout {
+    justify-self: end;
+}
+header#admin_header .container_header .logout button {
+    border: none;
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal ;
+    text-transform: uppercase;
+    transition: 300ms;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
 
+header#admin_header .container_header .logout button:hover {
+    font-weight: bold;
+}
 /********** MAIN ************/
 
 main.container {
     width: 90%;
     max-width: 940px;
     margin: 0 auto;
+    position: relative;
 }
 
 .button {
     height: 37px;
-    padding: 0 16px;
+    padding: 8px 24px;
     background-color: #6558c3;
     border-radius: 4px;
     color: #fff;

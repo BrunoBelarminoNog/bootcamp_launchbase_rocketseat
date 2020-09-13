@@ -8,11 +8,14 @@
     {% endblock head %}
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/messages.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% block styles %}
     {% endblock styles %}
 </head>
 <body>
+
+
 
     {% block header %}
 
@@ -29,6 +32,7 @@
                     <li><a href="/sobre">Sobre</a></li>
                     <li><a href="/receitas">Receitas</a></li>
                     <li><a href="/chefs">Chefs</a></li>
+                    <li><a href="/login">Login</a></li>
                 </ul>
             </div>
             <div id="search">
@@ -45,6 +49,9 @@
 
 
     <main class="container">
+
+        {%include "admin/parts/messages.njk"%}
+
        
        {% block content %}
        {% endblock content %}
