@@ -3,6 +3,7 @@ const routes = express.Router(); //Router() é o metodo responsavel para que a v
 
 const SessionController = require('../app/controllers/sessionController')
 const UserController = require('../app/controllers/userController')
+const OrderController = require('../app/controllers/OrderController')
 
 const UserValidator = require('../app/validators/user')
 const SessionValidator = require('../app/validators/session')
@@ -38,6 +39,11 @@ routes.post('/register', UserValidator.post, UserController.post)
 routes.get('/', onlyUsers, UserValidator.show, UserController.show)
 routes.put('/', UserValidator.update, UserController.update)
 routes.delete('/', UserController.delete)
+
+routes.get('/ads', UserController.ads)
+
+routes.post('/orders', onlyUsers, OrderController.post)
+
 
 
 module.exports = routes
