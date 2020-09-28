@@ -5,11 +5,17 @@ const Homecontroller = require('../app/controllers/homeController')
 
 const users = require('./users')
 const products = require('./products')
+const cart = require('./cart')
+const orders = require('./orders')
+
 
 
 routes.get('/', Homecontroller.index)
 routes.use('/products', products)
 routes.use('/users', users) //.u    se funciona como um midleware, colocando a rota /users no inicio de cada rota importada do arquivo users.js
+routes.use('/cart', cart)
+routes.use('/orders', orders)
+
 
 
 //ALIAS
